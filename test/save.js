@@ -1,11 +1,5 @@
-const { Manager } = require('../index');
+function fn(a, b) {
+    console.log(a, b);
+}
 
-let test = new Manager({  
-    password: 'superStrongEncryptionKey'
-});
-
-test.set('test', 'hello world');
-
-setTimeout(() => {
-    console.log(test.get('test'));
-}, 2000);
+fn.apply(this, [ 1, 2 ]);
