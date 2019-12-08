@@ -4,7 +4,7 @@ const readlineSync = require('readline-sync');
 const { spawn } = require('child_process');
 
 const Manager = require('./classes/Manager');
-const TerminalManager = require('./classes/TerminalManager');
+const { TerminalManager } = require('./libs/terminal');
 
 const password = readlineSync.question('Password: ', {
     hideEchoBack: true,
@@ -26,6 +26,10 @@ if (args.length == 0) {
 
     commandManager.addCommand('set', (key, value) => {
         manager.set(key, value);
+    });
+
+    commandManager.addCommand('get', key => {
+        console.log(manager.get(key));
     });
 
     commandManager.addCommand('exit', () => {

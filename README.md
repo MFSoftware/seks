@@ -2,10 +2,11 @@
 Secure Key Storage
 
 ## Install
+**cli** tool globaly
 ```bash
 npm i seks -g
 ```
-or core
+or **core**
 ```bash
 npm i seks --save
 ```
@@ -15,7 +16,7 @@ Start app with support of seks using cli interface
 ```bash
 seks [command]
 ```
-Also you can start seks in terminal mode
+Also you can start it in terminal mode
 ```bash
 seks
 ```
@@ -53,6 +54,15 @@ and start it
 ```bash
 seks node test.js
 ```
+
+## CLI
+Methods:
+
+1. help
+2. set
+3. get
+4. update
+5. version
 
 ## License
 MIT

@@ -1,6 +1,6 @@
 {
   "name": "seks",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Secure Key Storage",
   "main": "index.js",
   "bin": {
@@ -15,7 +15,7 @@
   },
   "author": "MagicFun1241",
   "dependencies": {
-    "aes-js": "^3.1.2",
+    "aes256": "^1.0.4",
     "readline-sync": "^1.4.10",
     "sha256": "^0.2.0",
     "validator": "^12.1.0"
@@ -23,6 +23,12 @@
   "devDependencies": {
     "mocha": "^6.2.2"
   },
+  "keywords": [
+    "encrypted",
+    "storage",
+    "secure",
+    "key"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/MFSoftware/seks/issues"

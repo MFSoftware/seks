@@ -5,9 +5,11 @@ function exists(path) {
 }
 
 function write(path, content) {
-    fs.writeFile(path, content, err => {
-        if (err) throw err;
-    }); 
+    fs.writeFileSync(path, content, { encoding: 'utf8' }); 
+}
+
+function createDir(path) {
+    fs.mkdirSync(path);
 }
 
 function read(path) {
@@ -17,5 +19,6 @@ function read(path) {
 module.exports = {
     exists,
     write,
-    read
+    read,
+    createDir
 };
