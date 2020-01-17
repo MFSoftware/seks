@@ -1,5 +1,10 @@
-function fn(a, b) {
-    console.log(a, b);
-}
+const { Manager } = require('../index');
 
-fn.apply(this, [ 1, 2 ]);
+let storage = new Manager({
+    password: 'some'
+});
+storage.use('test');
+
+setTimeout(() => {
+    console.log(storage.get('w'));
+}, 2000);

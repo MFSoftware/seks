@@ -2,6 +2,7 @@
 
 const readlineSync = require('readline-sync');
 const { spawn } = require('child_process');
+const { getDirectories } = require('./fs');
 
 const Manager = require('./classes/Manager');
 const { TerminalManager } = require('./libs/terminal');
@@ -21,7 +22,19 @@ if (args.length == 0) {
     let commandManager = new TerminalManager;
 
     commandManager.addCommand('help', () => {
-        console.log('hello');
+        let msg = '';
+
+        let names = Object.getOwnPropertyNames(commandManager.list);
+        names.shift(); // Removes 'length' property of Array
+
+        for (let i = 0; i < names.length; i++)
+            msg += ` ${names[i]}`;
+
+        console.log(msg);
+    });
+
+    commandManager.addCommand('exists', key => {
+        console.log(manager.exists(key));
     });
 
     commandManager.addCommand('set', (key, value) => {
@@ -30,6 +43,29 @@ if (args.length == 0) {
 
     commandManager.addCommand('get', key => {
         console.log(manager.get(key));
+    });
+
+    commandManager.addCommand('show', key => {
+        switch(key) {
+            case 'dbs':
+                let dirs = getDirectories('seks/storage');
+                console.log(dirs);
+                break;
+            case 'users':
+                break;
+            case 'keys':
+                if (manager.database != '') 1;
+                else console.warn('Database is not selected');
+                break;
+        }
+    });
+
+    commandManager.addCommand('update', (key, value) => {
+        manager.update(key, value);
+    });
+
+    commandManager.addCommand('use', database => {
+        manager.use(database);
     });
 
     commandManager.addCommand('exit', () => {

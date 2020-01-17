@@ -1,24 +1,8 @@
 const fs = require('fs');
 
-function exists(path) {
-    return fs.existsSync(path);
-}
+const getDirectories = source =>
+    fs.readdirSync(source, { withFileTypes: true })
+    .filter(dirent => dirent.isDirectory())
+    .map(dirent => dirent.name);
 
-function write(path, content) {
-    fs.writeFileSync(path, content, { encoding: 'utf8' }); 
-}
-
-function createDir(path) {
-    fs.mkdirSync(path);
-}
-
-function read(path) {
-    return fs.readFileSync(path, 'utf8');
-}
-
-module.exports = {
-    exists,
-    write,
-    read,
-    createDir
-};
+module.exports = { getDirectories };

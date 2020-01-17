@@ -1,6 +1,6 @@
 {
   "name": "seks",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Secure Key Storage",
   "main": "index.js",
   "bin": {
@@ -15,9 +15,9 @@
   },
   "author": "MagicFun1241",
   "dependencies": {
-    "aes256": "^1.0.4",
+    "@hapi/cryptiles": "^5.0.0",
+    "fs-extra": "^8.1.0",
     "readline-sync": "^1.4.10",
-    "sha256": "^0.2.0",
     "validator": "^12.1.0"
   },
   "devDependencies": {

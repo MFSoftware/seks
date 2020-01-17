@@ -17,9 +17,10 @@ module.exports = class TerminalManager {
     }
 
     parse(command) {
-        let args = command.toLowerCase().trim().split(' ');
+        let args = command.trim().split(' ');
 
         if (args.length >= 1) {
+            args[0] = args[0].toLowerCase();
             let obj = this.list[args[0]];
 
             if (obj == undefined) throw new Error('Command not found');
