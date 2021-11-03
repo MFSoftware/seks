@@ -18,7 +18,7 @@
     "@hapi/cryptiles": "^5.0.0",
     "fs-extra": "^8.1.0",
     "readline-sync": "^1.4.10",
-    "validator": "^12.1.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "mocha": "^6.2.2"
