@@ -16,7 +16,7 @@
   "author": "MagicFun1241",
   "dependencies": {
     "@hapi/cryptiles": "^5.0.0",
-    "fs-extra": "^8.1.0",
+    "fs-extra": "^9.0.0",
     "readline-sync": "^1.4.10",
     "validator": "^12.1.0"
   },
